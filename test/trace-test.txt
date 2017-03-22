@@ -1,0 +1,8 @@
+# ---------------------------------------------------
+# A test suite made of atomic events
+# Each line represents a distinct trace
+# ---------------------------------------------------
+
+{1|add|Hello world!},{2|add|Hello world!},{conc|add|Hello world!},{conc|overwrite|Hello world!},{1|overwrite|Hello world!}
+{1|add|Hello world!},{conc|add|Hello world!},{conc|overwrite|Hello world!},{1|overwrite|Hello world!}
+

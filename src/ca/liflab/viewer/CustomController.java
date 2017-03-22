@@ -1,6 +1,6 @@
 package ca.liflab.viewer;
 
-import ca.liflab.check.LifecycleCheck;
+import ca.liflab.TriggeredBySecurityButton;
 import org.icepdf.ri.common.SwingController;
 
 import javax.swing.*;
@@ -25,7 +25,7 @@ public class CustomController extends SwingController {
     }
 
     public void checkIntegrity() {
-        new LifecycleCheck().run();
+        new TriggeredBySecurityButton().run();
     }
 
     @Override

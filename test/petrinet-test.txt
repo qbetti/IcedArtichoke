@@ -1,0 +1,31 @@
+P P0 add|1
+T add|1 P1
+
+P P1 overwrite|1
+T overwrite|1 P1
+
+P P2 add|2
+T add|2 P3
+
+P P3 overwrite|2
+T overwrite|2 P3
+
+P P1 add|conc
+P P3 add|conc
+P P4 add|conc
+
+T add|conc P1
+T add|conc P3
+T add|conc P5
+
+P P1 overwrite|conc
+P P3 overwrite|conc
+P P5 overwrite|conc
+
+T overwrite|conc P1
+T overwrite|conc P3
+T overwrite|conc P5
+
+M P0 1
+M P2 1
+M P4 1

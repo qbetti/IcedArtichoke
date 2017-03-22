@@ -1,6 +1,7 @@
-package ca.liflab.check;
+package ca.liflab;
 
 import ca.uqac.lif.artichoke.*;
+import ca.uqac.lif.artichoke.Action;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -10,7 +11,7 @@ import java.util.Map;
 /**
  * Created by quent on 21/02/2017.
  */
-public class LifecycleCheck {
+public class TriggeredBySecurityButton {
 
     public void run() {
 
@@ -22,17 +23,21 @@ public class LifecycleCheck {
             RsaFactory factory = new RsaFactory();
             MessageDigest digest = MessageDigest.getInstance("MD5");
             HistoryManager hm = new HistoryManager(digest);
+
             Map<String,Peer> peers = new HashMap<String,Peer>();
             peers.put("Alice", factory.newPeer("Alice"));
             peers.put("Bob", factory.newPeer("Bob"));
             peers.put("Carl", factory.newPeer("Carl"));
+
             Map<String,Group> groups = new HashMap<String,Group>();
             groups.put("G1", factory.newGroup("G1"));
             groups.put("G2", factory.newGroup("G2"));
-            Map<String,Action> actions = new HashMap<String,Action>();
+
+            Map<String, ca.uqac.lif.artichoke.Action> actions = new HashMap<String,Action>();
             actions.put("a", factory.newAction("a"));
             actions.put("b", factory.newAction("b"));
             actions.put("c", factory.newAction("c"));
+
             hm.setPeerDirectory(peers);
             hm.setActionDirectory(actions);
             hm.setGroupDirectory(groups);
